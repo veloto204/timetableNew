@@ -1,4 +1,3 @@
-import borisov_victor.Bloggersville;
 import borisov_victor.BusCompany;
 import borisov_victor.Timetable;
 import org.junit.jupiter.api.BeforeEach;
@@ -53,6 +52,16 @@ public class TimetableClass {
         timetable.readInput("Example_output.txt");
         bus = timetable.getBloggersville().getBuses();
         timetable.readInput("Example_input.txt");
+        timetable.sort();
+        assertEquals(timetable.getBloggersville().getBuses(), bus);
+    }
+
+    @Test
+    public void afterMidnight() throws ParseException, IOException {
+        bus.clear();
+        bus.add(new BusCompany("Posh", formatDate.parse("23:03"),
+                timetable.addDays(formatDate.parse("00:01"))));
+        timetable.readInput("AfterMidnight.txt");
         timetable.sort();
         assertEquals(timetable.getBloggersville().getBuses(), bus);
     }

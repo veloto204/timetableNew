@@ -7,6 +7,11 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.Scanner;
 
+
+/**
+ *The ConsoleApplication class allows one to enter file path to sort.
+ * The final file is located in project root folder with name "output.txt"
+ */
 public class ConsoleApplication {
     private static final Logger logger = LogManager.getLogger();
 

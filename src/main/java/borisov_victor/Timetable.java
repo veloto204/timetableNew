@@ -14,9 +14,7 @@ import java.util.*;
  */
 public class Timetable {
     private Bloggersville bloggersville;
-    private static final Logger logger = LogManager.getLogger();
-    private final static String OUTPUT = "Example_output.txt";
-    private final static String INPUT = "Example_input.txt";
+    private final static String OUTPUT = "output.txt";
     private SimpleDateFormat formatDate;
     private ArrayList<BusCompany> busTimetable;
 
@@ -41,23 +39,20 @@ public class Timetable {
      * @throws ParseException           occurs due to the use SimpleDateFormat
      * @throws IllegalArgumentException occurs due to file use
      */
-    public void readInput() throws ParseException, IllegalArgumentException {
-
-
-
+    public void readInput(String input) throws ParseException, IllegalArgumentException, IOException {
         try (BufferedReader buffReader =
                      new BufferedReader(new
-                             FileReader(new File(INPUT)))) {
+                             FileReader(new File(input)))) {
             while (buffReader.ready()) {
                 String readLine = buffReader.readLine();
-                String[] split = readLine.split("\\s");
-                Date dateStart = formatDate.parse(split[1]);
-                Date dateFinish = formatDate.parse(split[2]);
-                bloggersville.getBuses().add(new BusCompany(split[0],
-                        dateStart, dateFinish));
+                if (!readLine.equals("")) {
+                    String[] split = readLine.split("\\s");
+                    Date dateStart = formatDate.parse(split[1]);
+                    Date dateFinish = formatDate.parse(split[2]);
+                    bloggersville.getBuses().add(new BusCompany(split[0],
+                            dateStart, dateFinish));
+                }
             }
-        } catch (IOException e) {
-            logger.error(e);
         }
     }
 
@@ -112,7 +107,6 @@ public class Timetable {
     public void writeOutput() throws IOException {
         ArrayList<BusCompany> grottyBus = new ArrayList<>();
         ArrayList<BusCompany> poshBus = new ArrayList<>();
-
         for (BusCompany bus : bloggersville.getBuses()) {
             if (bus.getName().equals("Grotty")) {
                 grottyBus.add(bus);

@@ -23,10 +23,9 @@ tomorrow. E.g.: 23:03 00:01 defines that this service takes 58 minutes and the a
 5. Only efficient services shall be added to the timetable. A service is considered efficient if there are no
 other services that are more efficient compared to it. A service is considered more efficient compared to
 the other one:
-o If it starts at the same time and reaches earlier, or 
-
-o If it starts later and reaches at the same time, or
-o If it starts later and reaches earlier.
+* If it starts at the same time and reaches earlier, or 
+* If it starts later and reaches at the same time, or
+* If it starts later and reaches earlier.
 6. If both companies offer a service having the same departure and arrival times then always choose Posh
 Bus Company over Grotty Bus Company, since Grotty Bus Company busses are not as comfortable as
 those of Posh Bus Company.
@@ -34,9 +33,8 @@ those of Posh Bus Company.
 
 ## Technologies
 Project is created with:
-
-*IntelliJ IDEA Community Edition 2019.1.3
-*Language 8
+* IntelliJ IDEA Community Edition 2019.1.3
+* Language 8
 
 ## Installation
 ```bash

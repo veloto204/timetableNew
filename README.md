@@ -34,6 +34,7 @@ those of Posh Bus Company.
 
 ## Technologies
 Project is created with:
+
 *IntelliJ IDEA Community Edition 2019.1.3
 *Language 8
 

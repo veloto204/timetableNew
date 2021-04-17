@@ -12,6 +12,7 @@ difficult to use the timetable because of following reasons:
 2. Some of the buses run faster than others. For a frequent bus traveler it is better to miss an earlier bus
 in order to catch a faster bus which departs later but reaches its destination sooner.
 3. The entries in the timetable are not necessarily in order of departure time. 
+
 Given the information in the joint timetable, write a program to produce two modified timetables, one for
 Posh Bus Company and one for Grotty Bus Company, each satisfying the following requirements:
 1. All entries in each timetable are in order of departure time.
